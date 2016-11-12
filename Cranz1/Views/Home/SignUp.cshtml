@@ -1,0 +1,26 @@
+﻿@model Cranz1.Models.User
+@{
+    ViewBag.Title = "Signing up";
+}
+
+<h2>Registration form</h2>
+
+@using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+{
+    @Html.Label("Enter username");
+    <br />
+    @Html.TextBoxFor(x => x.Username);
+    <br />
+    <br />
+    @Html.Label("Enter password");
+    <br />
+    @Html.PasswordFor(x => x.Password);
+    <br />
+    <br />
+    @Html.Label("Enter e-mail");
+    <br />
+    @Html.TextBoxFor(x => x.Email);
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+}

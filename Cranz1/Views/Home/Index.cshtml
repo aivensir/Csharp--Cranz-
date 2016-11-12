@@ -1,0 +1,16 @@
+﻿@model IQueryable<Cranz1.Models.User>
+<!--объявили, что View Index привязана к типу данных IQueryable от модели User, т.е. коллекция пользователей. Model стала коллекцией-->
+@{
+    ViewBag.Title = "Welcome";
+
+}
+<br />
+@Html.ActionLink("Sign up", "SignUp", "Home")
+<h2>Users list</h2>
+@if (Model != null)
+{
+    foreach (Cranz1.Models.User i in Model)
+    {
+        <p>@i.Username</p>
+    }
+}
